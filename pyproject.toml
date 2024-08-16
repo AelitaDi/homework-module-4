@@ -45,6 +45,11 @@ no_implicit_optional = true
 warn_return_any = true
 exclude = 'venv'
 
+[tool.coverage.report]
+exclude_also = [
+    "raise NotImplementedError",
+    "if __name__ == .__main__.:",
+]
 
 [build-system]
 requires = ["poetry-core"]
