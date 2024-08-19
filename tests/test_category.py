@@ -12,8 +12,11 @@ def test_category(first_category, second_category):
 
 def test_add_product(first_category, first_product):
     assert len(first_category.products_list) == 2
+    a = first_category.product_count
     first_category.add_product(first_product)
     assert len(first_category.products_list) == 3
+    b = first_category.product_count
+    assert (b - a) == 1
 
 
 def test_products_property(first_category, first_product):

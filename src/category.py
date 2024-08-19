@@ -18,6 +18,7 @@ class Category:
     def add_product(self, new_product: Product):
         """Добавление нового товара в список."""
         self.__products.append(new_product)
+        Category.product_count += 1
 
     @property
     def products(self):
