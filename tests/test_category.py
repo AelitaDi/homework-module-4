@@ -26,3 +26,8 @@ def test_products_property(first_category, first_product):
         first_category.products
         == "Лук, 10.0 руб. Остаток: 10 шт.\nМорковь, 20.0 руб. Остаток: 20 шт.\nProduct, 10.0 руб. Остаток: 10 шт.\n"
     )
+
+
+def test_category_str(first_category, second_category):
+    assert str(first_category) == "Овощи, количество продуктов: 30 шт."
+    assert str(second_category) == "Хлеб, количество продуктов: 60 шт."
