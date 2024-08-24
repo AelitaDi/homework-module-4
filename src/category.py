@@ -1,4 +1,5 @@
 from src.product import Product
+from src.product_iterator import ProductIterator
 
 
 class Category:
@@ -54,5 +55,9 @@ if __name__ == "__main__":
     # print(cat1.products)
     # product4.price = 10
     # print(cat1.products)
-    print(cat1)
-    print(product1 + product2)
+    # print(cat1)
+    # print(product1 + product2)
+
+    iterator = ProductIterator(cat1)
+    for prod in iterator:
+        print(prod)

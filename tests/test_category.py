@@ -1,3 +1,6 @@
+import pytest
+
+
 def test_category(first_category, second_category):
     assert first_category.name == "овощи"
     assert first_category.description == "свежие овощи"
@@ -31,3 +34,13 @@ def test_products_property(first_category, first_product):
 def test_category_str(first_category, second_category):
     assert str(first_category) == "Овощи, количество продуктов: 30 шт."
     assert str(second_category) == "Хлеб, количество продуктов: 60 шт."
+
+
+def test_product_iterator(product_iterator):
+    iter(product_iterator)
+    assert product_iterator.index == 0
+    assert next(product_iterator).name == "лук"
+    assert next(product_iterator).name == "морковь"
+
+    with pytest.raises(StopIteration):
+        next(product_iterator)

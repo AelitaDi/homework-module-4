@@ -1,6 +1,8 @@
 import pytest
+
 from src.category import Category
 from src.product import Product
+from src.product_iterator import ProductIterator
 
 
 @pytest.fixture
@@ -33,3 +35,8 @@ def second_category():
 @pytest.fixture
 def product():
     return Product("молоко", "молоко ультрапастеризованное 1л", 40.0, 100)
+
+
+@pytest.fixture
+def product_iterator(first_category):
+    return ProductIterator(first_category)
