@@ -24,3 +24,11 @@ def test_price_update(capsys, first_product):
     message = capsys.readouterr()
     assert message.out.strip() == "Цена не должна быть нулевая или отрицательная"
     assert first_product.price == 12.0
+
+
+def test_product_str(first_product):
+    assert str(first_product) == "Product, 10.0 руб. Остаток: 10 шт."
+
+
+def test_product_add(first_product, product):
+    assert first_product + product == 4100.0
