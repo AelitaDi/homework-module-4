@@ -49,3 +49,9 @@ def test_product_iterator(product_iterator):
 def test_add_product_error(first_category):
     with pytest.raises(TypeError):
         first_category.add_product(1)
+
+
+def test_middle_price(first_category, second_category, no_products_category):
+    assert first_category.middle_price() == 15.0
+    assert second_category.middle_price() == 20.0
+    assert no_products_category.middle_price() == 0

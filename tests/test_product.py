@@ -1,3 +1,5 @@
+import pytest
+
 from src.product import Product
 
 
@@ -32,3 +34,8 @@ def test_product_str(first_product):
 
 def test_product_add(first_product, product):
     assert first_product + product == 4100.0
+
+
+def test_zero_quantity():
+    with pytest.raises(ValueError):
+        product1 = Product("огурец", "256GB, Серый цвет, 200MP камера", 1.0, 0)
