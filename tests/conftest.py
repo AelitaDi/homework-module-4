@@ -62,8 +62,3 @@ def grass1():
 @pytest.fixture
 def grass2():
     return LawnGrass("Газонная трава 2", "Выносливая трава", 450.0, 15, "США", "5 дней", "Темно-зеленый")
-
-
-@pytest.fixture
-def no_products_category():
-    return Category(name="овощи", description="свежие овощи", products=[])
