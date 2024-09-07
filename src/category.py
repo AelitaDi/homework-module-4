@@ -45,28 +45,22 @@ class Category:
     def products_list(self):
         return self.__products
 
-    def middle_price(self):
-        try:
-            return sum([prod.price for prod in self.__products]) / len(self.__products)
-        except ZeroDivisionError:
-            return 0
-
 
 if __name__ == "__main__":
-    product1 = Product("огурец", "256GB, Серый цвет, 200MP камера", 1.0, 0)
+    product1 = Product("огурец", "256GB, Серый цвет, 200MP камера", 1.0, 5)
     product2 = Product("морковь", "512GB, Gray space", 2.0, 8)
     product3 = Product("лук", "1024GB, Синий", 31000.0, 14)
     product4 = Product.new_product({"name": "молоко", "description": "молочные продукты", "price": 6, "quantity": 8})
     cat1 = Category("овощи", "любые овощи", [product1, product2])
     cat1.add_product(product4)
-    print(cat1.products)
-    cat1.add_product(product1)
-    print(cat1.products)
-    product4.price = 10
-    print(cat1.products)
-    print(cat1)
-    print(product1 + product2)
+    # print(cat1.products)
+    # cat1.add_product(product1)
+    # print(cat1.products)
+    # product4.price = 10
+    # print(cat1.products)
+    # print(cat1)
+    # print(product1 + product2)
 
-    # iterator = ProductIterator(cat1)
-    # for prod in iterator:
-    #     print(prod)
+    iterator = ProductIterator(cat1)
+    for prod in iterator:
+        print(prod)
